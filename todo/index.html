@@ -16,8 +16,7 @@
 
         <section id="main">
           {{outlet}}
-
-          <input type="checkbox" id="toggle-all">
+          {{input type="checkbox" id="toggle-all" checked=allAreDone}}
         </section>
 
         <footer id="footer">
@@ -31,10 +30,7 @@
               {{#link-to "todos.index" activeClass="selected"}}All{{/link-to}}
             </li>
             <li>
-              {{#link-to "todos.active" activeClass="selected"}}
-                Active
-              {{/link-to}}
-              
+              {{#link-to "todos.active" activeClass="selected"}}Active{{/link-to}}
             </li>
             <li>
               {{#link-to "todos.completed" activeClass="selected"}}Completed{{/link-to}}
@@ -78,6 +74,8 @@
     <script src="js/libs/ember.js"></script>
     <script src="js/libs/ember-data.js"></script>
 
+    <script src="js/libs/localstorage_adapter.js"></script>
+
     <script src="js/application.js"></script>
     <script src="js/router.js"></script>
     <script src="js/models/todo.js"></script>
@@ -86,6 +84,8 @@
 
     <script src="js/controllers/todo_controller.js"></script>
     <script src="js/views/edit_todo_view.js"></script>
+
+
 
    
     
