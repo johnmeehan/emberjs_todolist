@@ -1,4 +1,17 @@
 Todos.TodoController = Ember.ObjectController.extend({
+	actions: {
+		editTodo: function(){
+			this.set('isEditing', true);
+		},
+
+		acceptChanges: function(){
+			this.set('isEditing',false);
+			this.get('model').save();
+		}
+	},
+
+	isEditing: false,	
+
 	isCompleted: function(key, value){
 		var model = this.get('model');
 
@@ -12,4 +25,6 @@ Todos.TodoController = Ember.ObjectController.extend({
 			return value;
 		}
 	}.property('model.isCompleted')
+
+
 });
