@@ -7,7 +7,13 @@ Todos.TodoController = Ember.ObjectController.extend({
 		acceptChanges: function(){
 			this.set('isEditing',false);
 			this.get('model').save();
+		},
+		removeTodo: function(){
+			var todo = this.get('model');
+			todo.deleteRecord();
+			todo.save();
 		}
+
 	},
 
 	isEditing: false,	
